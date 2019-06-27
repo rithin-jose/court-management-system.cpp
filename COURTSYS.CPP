@@ -120,7 +120,7 @@ int Case::getcno()
 
 void Case::assign_judge()
 {int ch;
- lable:
+ target:
  cout<<"\nCHOOSE FROM THE FOLLOWING JUDGES "<<endl;
  cout<<"1.Justice Sanjay Kishan Kaul\n";
  cout<<"2.Justice Badar Durrez Ahmed\n";
@@ -134,7 +134,7 @@ void Case::assign_judge()
   case 3:strcpy(judge,"Justice Pradeep Nandrajog");
 	 break;
   default: cout<<"invalid entry!!";
-	  goto lable;
+	  goto target;
  }
 }
 
