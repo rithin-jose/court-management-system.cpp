@@ -1,13 +1,15 @@
 /**********************************************
 		Header file
 ***********************************************/
-#include<iostream.h>
+#include<iostream>
 #include<dos.h>
 #include<conio.h>
 #include<process.h>
 #include<stdio.h>
-#include<fstream.h>
+#include<fstream>
 #include<string.h>
+
+using namespace std;
 
 /**********************************************
 		Classes used
