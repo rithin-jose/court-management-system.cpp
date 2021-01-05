@@ -2,12 +2,13 @@
 		Header file
 ***********************************************/
 #include<iostream>
-#include<dos.h>
+#include<direct.h>
 #include<conio.h>
 #include<process.h>
 #include<stdio.h>
 #include<fstream>
 #include<string.h>
+#include<windows.h>
 
 using namespace std;
 
@@ -39,7 +40,7 @@ class Case
 
 class login
 {
-	char user_name[30];
+	char uname[30];
 	char pass[30];
  public:
 	login();             //constructor
@@ -73,7 +74,7 @@ Case::Case()
 
 login::login()
 {
- strcpy(user_name,"no");
+ strcpy(uname,"no");
  strcpy(pass,"no");
 }
 
@@ -186,26 +187,26 @@ void Case::assign_status()
 void login::Enter_un_pass()
 {
  lable:
- clrscr();
+ system("cls");
  cout<<"Username: ";
- gets(user_name);
+ gets(uname);
  cout<<"password: ";
  gets(pass);
- if(strcmpi(user_name,"admin")==0 &&strcmpi(pass,"12345")==0)
+ if(strcmpi(uname,"admin")==0 &&strcmpi(pass,"12345")==0)
  {
  cout<<"\nlogin successful ";
- delay(1000);
- clrscr();
+ Sleep(1000);
+ system("cls");
  }
- else if(strcmp(user_name,"0"))
+ else if(strcmp(uname,"0"))
  {
   goto lable;
  }
  else
  {
   cout<<"\n!!Wrong username or password"<<endl<<endl;
-  delay(1000);
-  clrscr();
+  Sleep(1000);
+  system("cls");
   goto lable;
   }
 }
@@ -214,7 +215,7 @@ void judgeasset::judgelist()
  do
  {
   lable:
-  clrscr();
+  system("cls");
   cout<<"\n YOU CAN CHOOSE FROM THE FOLLOWING JUDGES TO VIEW THEIR ASSETS\n";
   cout<<endl;
   cout<<"1. Justice Sanjay Kishan Kaul\n";
@@ -227,7 +228,7 @@ void judgeasset::judgelist()
    cin>>choice;
    switch(choice)
    {
-    case 1 :clrscr();
+    case 1 :system("cls");
 	    cout<<"==============================================================================\n";
 	    cout<<"   			JUDGES ASSETS\n";
 	    cout<<"==============================================================================\n";
@@ -237,7 +238,7 @@ void judgeasset::judgelist()
 	    cout <<"4. PPF Account with SBI = Rs. 9,30,845/-";
 	    getch();
 	    break;
-    case 2 :clrscr();
+    case 2 :system("cls");
 	    cout<<"==============================================================================\n";
 	    cout<<"   			JUDGES ASSETS\n";
 	    cout<<"==============================================================================\n";
@@ -252,7 +253,7 @@ void judgeasset::judgelist()
 	    cout<<"\nUndivided share in agricultural lands at Kalmani, Rangiya,  Assam. ";
 	    cout<<"Total area (approx) =202 bighas 1 katha 5 lechas. \n";
 	    break;
-    case 3 :clrscr();
+    case 3 :system("cls");
 	    cout<<"==============================================================================\n";
 	    cout<<"   			JUDGES ASSETS\n";
 	    cout<<"==============================================================================\n";
@@ -263,7 +264,7 @@ void judgeasset::judgelist()
 	    cout<<"PHASE-IV, GURGAON, ARYANA A~MEASURINGI H2O . SO.FT. (SUPER AREA) \n";
 	    cout<<"\nFIXED DEPOSITS IN BANK \n";
 	    break;
-    case 4 :clrscr();
+    case 4 :system("cls");
 	    cout<<"==============================================================================\n";
 	    cout<<"   			JUDGES ASSETS\n";
 	    cout<<"==============================================================================\n";
@@ -274,7 +275,7 @@ void judgeasset::judgelist()
 	    cout<<"\nClaim to undivided share in properties in District Rampur, UP left by paternal grandfather\n";
 	    cout<<"\nReal Estate (immoveable property) of the Judge's dependent (son) \n";
 	    break;
-    case 5 :clrscr();
+    case 5 :system("cls");
 	    cout<<"==============================================================================\n";
 	    cout<<"   			JUDGES ASSETS\n";
 	    cout<<"==============================================================================\n";
@@ -288,8 +289,8 @@ void judgeasset::judgelist()
     case 0 :exit(0);
 	   break;
     default: cout<<"Invalid entry!!";
-	     delay(1000);
-	     clrscr();
+	     Sleep(1000);
+	     system("cls");
 	     goto lable;
    }
   cout<<"\nWant to know more? ";
@@ -319,18 +320,18 @@ login l;
 /**********************************************
 	The main function of the program
 ***********************************************/
-void main()
+int main()
 {
- clrscr();
+ system("cls");
  cout<<"\n\n\n\n\t\t\t  Court Management System"<<endl;
- delay(1000);
+ Sleep(1000);
  cout<<"\n\n\n\n\t\t\t\tCoded by:\n\t\t\t Atrij Sharma and Rithin Jose";
  cout<<"\n\n\n\n\n\n\n\n\n\n\n\nPress any key to continue...";
  getch();
 
 
  lable:
- clrscr();
+ system("cls");
  cout<<"\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
  cout<<"\t\t\tWELCOME TO DELHI HIGH COURT"<<endl;
  cout<<"\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
@@ -344,7 +345,7 @@ void main()
  {
   case 1:int v_ch;
 	 lable1:
-	 clrscr();
+	 system("cls");
 	 cout<<"\n\n\n\n\n\tDELHI HIGH COURT";
 	 cout<<"\n\t\tYOU CAN DO THE FOLLOWING OPERATIONS: "<<endl;
 	 cout<<"\t\t1.View case"<<endl;
@@ -355,14 +356,14 @@ void main()
 	 cin>>v_ch;
 	 if(v_ch==1)
 	 {
-	  clrscr();
+	  system("cls");
 	  display_record();
 	  getch();
 	  goto lable1;
 	 }
 	 else if(v_ch==2)
 	 {
-	  clrscr();
+	  system("cls");
 	  search_record();
 	  goto lable1;
 	 }
@@ -383,7 +384,7 @@ void main()
   case 2:l.Enter_un_pass();
 	 int a_ch;
 	 lable2:
-	 clrscr();
+	 system("cls");
 	 cout<<"\n\n  Welcome ADMIN";
 	 cout<<"\n\n\t\tYOU CAN DO THE FOLLOWING OPERATIONS:"<<endl;
 	 cout<<"\t\t1.Add case"<<endl;
@@ -396,32 +397,32 @@ void main()
 	 cin>>a_ch;
 	 if(a_ch==1)
 	 {
-	  clrscr();
+	  system("cls");
 	  add_record();
 	  goto lable2;
 	 }
 	 else if(a_ch==2)
 	 {
-	  clrscr();
+	  system("cls");
 	  delete_record();
 	  goto lable2;
 	 }
 	 else if(a_ch==3)
 	 {
-	  clrscr();
+	  system("cls");
 	  update_record();
 	  goto lable2;
 	 }
 	 else if(a_ch==4)
 	 {
-	  clrscr();
+	  system("cls");
 	  display_record();
 	  getch();
 	  goto lable2;
 	 }
 	 else if(a_ch==5)
 	 {
-	  clrscr();
+	  system("cls");
 	  search_record();
 	  goto lable2;
 	 }
@@ -441,6 +442,7 @@ void main()
 	   goto lable;
  }
  getch();
+ return 0;
 }
 /**********************************************
 	D.F.H function defination
@@ -449,7 +451,7 @@ void add_record()
 {
  do
  {
-  clrscr();
+  system("cls");
   f1.open("court.dat",ios::out|ios::app);
   cout<<"Enter new case details: "<<endl;
   c.input();
@@ -484,7 +486,7 @@ void search_record()
  char arr[20];
  do
  {
-  clrscr();
+  system("cls");
   cout<<"\nEnter case no. to be searched for: ";
   cin>>cno;
   f1.open("court.dat",ios::in);
@@ -518,7 +520,7 @@ void delete_record()
  flag=0;
  do
  {
-  clrscr();
+  system("cls");
   cout<<"Enter the case no.to be deleted: ";
   cin>>cno;
   f1.open("court.dat",ios::in);
@@ -563,7 +565,7 @@ void update_record()
  char ans;
  do
  {
-  clrscr();
+  system("cls");
   f1.open("court.dat",ios::in|ios::out);
   if(!f1)
    cout<<"File does not exist"<<endl;
@@ -586,7 +588,8 @@ void update_record()
 
    if(flag==1)
    {
-    int pos=f1.tellg()-sizeof(c);
+	   int getpos = f1.tellg();					//error removal temp variable to remove ambiguity
+    int pos= getpos - sizeof(c);
     f1.seekp(pos,ios::beg);
     cout<<"\nENTER NEW INFORMATION: "<<endl;
      c.input();
