@@ -5,7 +5,7 @@ This was the project made during my school time along with my friend Atrij Sharm
 
 Prerequistie for running the program is to have g++ compiler on the machine used.
 
-### Installing
+## Installing
 
 To View clone the repo and compile the code with the command:
 
@@ -17,3 +17,7 @@ followed by
      ./[filename].exe			(windows)
      ./[filename].out			(linux/Mac)
 to run the program.
+
+## License
+
+court-management-system.cpp is licensed under [GNU Lesser General Public License v3.0](https://github.com/rithin-jose/court-management-system.cpp/blob/master/LICENSE.md)
